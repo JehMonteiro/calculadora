@@ -19,8 +19,13 @@ function invertValues(){
     document.getElementById('input-value').value = input * -1
 }
 
-function percent(){
-    calculate()
-    const input = document.getElementById('input-value').value
-    document.getElementById('input-value').value = input / 100
+function percentCalc() {
+    if (document.getElementById('input-value').value == '') {
+        document.getElementById('input-value').value = '0'
+    } else {
+        calculate()
+
+        resultPercentCalc = document.getElementById('input-value').value / 100
+        document.getElementById('input-value').value = resultPercentCalc
+    }
 }
